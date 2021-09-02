@@ -4,7 +4,7 @@ Common
 
 html,
 body {
-    height: 250%;
+    height: 100%;
 }
 
 .content {
@@ -21,6 +21,7 @@ Post
 
 
 .post_form {
+    display: flex;
     padding: 20px 40px;
     border-bottom: 1px solid #ccc;
 }
@@ -32,10 +33,10 @@ Post
     border:1px solid #ccc;
 }
 
-.post_form textarea {
+.posts_form textarea {
     width:70%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(64, 9, 192);
 }
 
 .posts ul {
@@ -69,6 +70,20 @@ Post
     border-radius: 3px;
 }
 
+.btn{
+    background-color: rgb(29, 161, 242);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    vertical-align: middle;
+    margin-top: 10px;
+    
+
+}
+
 .posts li .menu a{
     text-decoration: none;
 }
@@ -78,7 +93,7 @@ Post
 }
 
 .posts li .logo img {
-    width: 60%;
+    width: 50%;
 }
 
 .posts li .name_body {
@@ -90,8 +105,13 @@ Post
 }
 
 .posts li .name_body .datetime {
-    color: gray;
+    color: rgb(69, 15, 219);
 }
+
+.tweet{
+    float: right;
+}
+    
 
 @media screen and (max-width: 500px) {
     .posts li .name_body .name{

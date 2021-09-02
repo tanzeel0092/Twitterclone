@@ -7,7 +7,7 @@ from .forms import PostForm
 def index(request):
     # If the method is POST
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         #If the form is valid
         if form.is_valid():
             # Yes, Save
@@ -34,4 +34,27 @@ def delete(request, post_id):
    # Find Post
    post = Post.objects.get(id = post_id) 
    post.delete()
+   return HttpResponseRedirect('/')
+   
+def edit(request,post_id):
+    # If the method is POST
+    post = Post.objects.get(id=post_id)
+    print('Hello World')
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES,instance = post)
+        #If the form is valid
+        if form.is_valid():
+            # Yes, Save
+            form.save()
+            return HttpResponseRedirect('/')   
+    else: 
+        form=PostForm
+        return render(request,'edit.html',{'post':post,'form':form})
+
+def like(request, post_id):
+   # Find Post
+   post = Post.objects.get(id = post_id)
+   newlikecount=post.like_count+1
+   post.like_count=newlikecount
+   post.save()
    return HttpResponseRedirect('/')
