@@ -1,2 +1,2 @@
-# Django-Project
+# Twitter Clone-Project
 Tech-IS Django Project
