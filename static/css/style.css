@@ -111,6 +111,13 @@ Post
 .tweet{
     float: right;
 }
+
+.logotop img{
+    margin: 10px;
+}
+.logotop{
+    display:flex;
+}
     
 
 @media screen and (max-width: 500px) {
